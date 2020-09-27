@@ -1,13 +1,13 @@
-import 'package:chatapp/pages/registerpage.dart';
-
+import 'package:chatapp/pages/loginpage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
                   Flexible(
                     child: Container(
                       child: Text(
-                        "Login",
+                        "Register",
                         style: TextStyle(
                             fontSize: 50, fontWeight: FontWeight.bold),
                       ),
@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                             side: BorderSide(color: Colors.white)),
                         color: Colors.amberAccent[100],
                         child: Text(
-                          "Giriş Yap",
+                          "Kayıt Ol",
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold),
                         ),
@@ -104,15 +104,15 @@ class _LoginPageState extends State<LoginPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Üye değil misiniz ?",
+                            "Zaten Üye misiniz ?",
                             style: TextStyle(fontSize: 13, color: Colors.white),
                           ),
                           FlatButton(
                               onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterPage()));
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
                               },
                               child: Text(
-                                "Hemen Ol !",
+                                "Giriş Yap !",
                                 style: TextStyle(color: Colors.amberAccent),
                               ))
                         ],
