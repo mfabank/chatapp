@@ -1,13 +1,14 @@
 import 'package:chatapp/pages/loginpage.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:chatapp/pages/registerpage.dart';
+
 import 'package:flutter/material.dart';
 
-class RegisterPage extends StatefulWidget {
+class ForgotPassword extends StatefulWidget {
   @override
-  _RegisterPageState createState() => _RegisterPageState();
+  _ForgotPasswordState createState() => _ForgotPasswordState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +21,8 @@ class _RegisterPageState extends State<RegisterPage> {
               begin: FractionalOffset(0.3, 1),
             ),
           ),
-          child: Container(
+          child: Flexible(
+            child: Container(
               child: Column(
                 children: [
                   SizedBox(
@@ -36,9 +38,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   Flexible(
                     child: Container(
                       child: Text(
-                        "Register",
+                        "Forgot Password",
                         style: TextStyle(
-                            fontSize: 50, fontWeight: FontWeight.bold),
+                            fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
@@ -47,7 +49,8 @@ class _RegisterPageState extends State<RegisterPage> {
                       child: Form(
                         child: Column(
                           children: [
-                            Container(
+                            Flexible(
+                              child: Container(
                                 width: 275,
                                 child: TextFormField(
                                   decoration: InputDecoration(
@@ -57,25 +60,22 @@ class _RegisterPageState extends State<RegisterPage> {
                                   ),
                                 ),
                               ),
-
-                            Container(
-                                width: 275,
-                                child: TextFormField(
-                                  obscureText: true,
-                                  decoration: InputDecoration(
-                                    labelText: "Parola",
-                                    hintText: "******",
-                                    isDense: true,
-                                  ),
-                                ),
-                              ),
-
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Flexible(
+                              child: Text(
+                                  "Şifre sıfırlama bağlantısı göndereceğiz."),
+                            )
                           ],
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Flexible(
                     child: Container(
                       child: RaisedButton(
@@ -86,7 +86,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             side: BorderSide(color: Colors.white)),
                         color: Colors.amberAccent[100],
                         child: Text(
-                          "Kayıt Ol",
+                          "Gönder",
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold),
                         ),
@@ -98,29 +98,28 @@ class _RegisterPageState extends State<RegisterPage> {
                     height: 20,
                   ),
                   Flexible(
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Zaten Üye misiniz ?",
-                            style: TextStyle(fontSize: 14, color: Colors.white),
-                          ),
-                          FlatButton(
-                              onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
-                              },
-                              child: Text(
-                                "Giriş Yap !",
-                                style: TextStyle(color: Colors.amberAccent,fontSize: 20),
-                              ))
-                        ],
+                    child: Container(
+                      child: FlatButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginPage()));
+                        },
+                        child: Text(
+                          "Giriş Ekranı",
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
                       ),
                     ),
-
+                  ),
                 ],
               ),
             ),
-          )
+          )),
     );
   }
 }
