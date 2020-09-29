@@ -27,28 +27,14 @@ class _LoginPageState extends State<LoginPage> {
   bool isLoggedIn = false;
   bool isLoading = false;
   FirebaseUser currentUser;
-  Firebase firebase;
 
 
-  void initializeFlutterFire() async {
-    try {
-      // Wait for Firebase to initialize and set `_initialized` state to true
-      await Firebase.initializeApp();
 
-      setState(() {
-        print("çalıştı");
-      });
-    } catch (e) {
-      // Set `_error` state to true if Firebase initialization fails
-      setState(() {
-        print("hata var");
-      });
-    }
-  }
+
 
   @override
   void initState() {
-    initializeFlutterFire();
+
     super.initState();
 
 
